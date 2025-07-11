@@ -44,11 +44,11 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         // POSTS
-                        .requestMatchers(HttpMethod.GET, "/posts/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/posts/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/posts/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/posts/**").authenticated()
                         // EVENTOS
-                        .requestMatchers(HttpMethod.GET, "/eventos/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/eventos/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/eventos/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/eventos/**").authenticated()
                         .anyRequest().authenticated()
